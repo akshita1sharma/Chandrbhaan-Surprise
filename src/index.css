@@ -1,0 +1,161 @@
+/* src/index.css */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d1117; 
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow-x: hidden;
+}
+
+.bg-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.app-container {
+  position: relative;
+  z-index: 10;
+}
+
+/* Gift Stage */
+.gift-stage {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.gift-box-size {
+  font-size: 200px;
+} 
+
+.tap-hint {
+  margin-top: 20px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  animation: glow-text 1.5s infinite alternate;
+}
+
+@keyframes glow-text {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+/* Birthday Banner */
+.birthday-box-container {
+  padding: 120px 20px 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.birthday-banner {
+  border: 10px solid #ffffff;
+  padding: 60px 40px;
+  width: 100%;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+}
+
+.big-title {
+  font-size: clamp(2rem, 10vw, 5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  letter-spacing: 6px;
+  margin: 0;
+}
+
+/* Gallery - IMAGE GLOW & SCALE EFFECTS */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+}
+
+.card {
+  background: white; 
+  padding: 15px; 
+  border-radius: 20px; 
+  width: 340px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, filter 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover { 
+  transform: translateY(-15px) scale(1.08); 
+  box-shadow: 0 0 40px 10px rgba(255, 255, 255, 0.7); 
+  filter: brightness(1.1); 
+}
+
+.card img {
+  width: 100%;
+  height: 350px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.caption {
+  color: #1e3799;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 15px;
+  margin: 0;
+}
+
+/* Cake Stage */
+.cake-stage {
+  text-align: center;
+  padding: 100px 20px;
+  cursor: pointer;
+}
+
+.cake-box-size {
+  font-size: 150px;
+} 
+
+.hint {
+  color: #aaa;
+}
+
+.message-box {
+  background: white;
+  color: #1e3799;
+  padding: 40px;
+  border-radius: 30px;
+  max-width: 600px;
+  margin: 40px auto;
+  font-size: 1.3rem;
+  line-height: 1.6;
+  border: 5px solid #4a69bd;
+  box-shadow: 0 0 40px rgba(255,255,255,0.3);
+}
+
+/* Footer - Fully Visible White */
+.footer { 
+  text-align: center;
+  padding: 100px 0 50px 0; 
+  opacity: 1; 
+  color: #ffffff; 
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .birthday-banner { padding: 30px 10px; border-width: 5px; border-radius: 20px; }
+  .gallery { flex-direction: column; align-items: center; }
+  .gift-box-size { font-size: 120px; }
+  .cake-box-size { font-size: 100px; }
+}
